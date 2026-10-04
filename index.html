@@ -111,23 +111,6 @@
 
 <div class="columns is-centered has-text-centered">
 <div class="column is-four-fifths">
-<h2 class="title is-3">Abstract</h2>
-<div class="content has-text-justified"><p>News image captioning requires models to connect visual evidence with external article context to identify depicted people, locations, events, and their broader significance. Existing retrieval-augmented methods typically inject all named entities extracted from the retrieved article into the captioning pipeline. However, news articles often mention secondary actors and background events that are not depicted, leading to unsupported descriptions and inefficient use&nbsp;of&nbsp;the&nbsp;caption&nbsp;budget.</p><p>We introduce VG-Cap, a retrieval-augmented news captioning framework that selectively incorporates entities according to their estimated visual groundedness. Our Entity Heuristic Scorer ranks candidate entities using their presence across visual and textual context, position within the article, and semantic type. A unified gating mechanism applies the same entity selection to both prompt-time entity conditioning and post-generation enrichment, preventing rejected entities from being introduced through these&nbsp;explicit&nbsp;entity&nbsp;pathways.</p><p>We further introduce Two-Stage Length Control mechanism that combines bounded generation with entity-preserving semantic normalization. Experiments on the OpenEvents-V1 dataset set demonstrate that VG-Cap consistently outperforms the strongest baselines. The results further show that selective entity grounding improves the relevance and semantic alignment of generated news captions by reducing unnecessary&nbsp;contextual&nbsp;entities.</p></div>
-</div>
-</div>
-
-
-
-
-</div>
-</section>
-
-
-<section class="section">
-<div class="container is-max-desktop">
-
-<div class="columns is-centered has-text-centered">
-<div class="column is-four-fifths">
 <h2 class="title is-3">Method</h2>
 <div class="content has-text-justified"><p>VG-Cap generates an event-enriched caption in two stages: article retrieval, which identifies the most relevant news article for the query image, and context-grounded caption generation. Retrieval uses the retrieval component of ENRIC as a fixed backbone, with uncertainty-guided re-ranking when the initial&nbsp;result&nbsp;is&nbsp;not&nbsp;reliable.</p><p>Two-Stage Length Control combines bounded generation, with a target range of 100-120 words, and semantic normalization to a target&nbsp;length&nbsp;of&nbsp;104&nbsp;words.</p></div>
 <div class="content has-text-centered"><img alt="Pipeline diagram of VG-Cap: article retrieval and re-ranking, context construction, the Entity Heuristic Scorer, caption generation and two-stage length control." class="interpolation-image" height="962" loading="lazy" src="./static/images/fig1.jpg" width="1447"><p class="is-size-7 has-text-grey-dark has-text-justified mt-2"><strong>Figure&nbsp;1.</strong> Overview of VG-Cap. A query image is used to retrieve a relevant news article, from which contextual information and candidate entities are extracted. The Entity Heuristic Scorer selects visually grounded entities to guide caption generation, followed by Two-Stage Length Control for the final event-enriched&nbsp;caption.</p></div><div class="content has-text-justified"><p>The Entity Heuristic Scorer gives every candidate entity a groundedness score: the weighted sum of its heuristic features (contextual presence, article position and entity type), which&nbsp;cannot&nbsp;fall&nbsp;below&nbsp;zero.</p></div><div class="content has-text-centered">\[S(e) = \max\left(0, \sum_{f \in \mathcal{F}} w_f \phi_f(e)\right),\]<p class="is-size-7 has-text-grey-dark has-text-justified has-text-centered-tablet-only has-text-centered-desktop mt-2"><strong>Equation&nbsp;(1):</strong> the groundedness score S(e) of a&nbsp;candidate&nbsp;entity&nbsp;e.</p></div><div class="content has-text-justified"><p>Entities with a score of at least 3.0&nbsp;are retained and ranked according to their scores, and at most ten&nbsp;entities&nbsp;are&nbsp;selected.</p></div><div class="content has-text-centered">\[\mathcal{E}^{*} = \mathrm{TopK}_{K=10}\left(\{e \in \mathcal{E} : S(e) \geq 3.0\}\right).\]<p class="is-size-7 has-text-grey-dark has-text-centered mt-2"><strong>Equation&nbsp;(3):</strong> the selected&nbsp;entity&nbsp;set.</p></div></div>
