@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="News image captioning requires models to connect visual evidence with external article context to identify depicted people, locations, events, and their..." name="description">
+<meta content="VGCap, Visual grounding, Selective entity conditioning, Entity selection, Retrieval-augmented generation, Event-enriched captioning" name="keywords">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Grounding What Matters: Selective Entity Conditioning for Event-Enriched News Image Captioning" property="og:title">
+  <meta content="News image captioning requires models to connect visual evidence with external article context to identify depicted people, locations, events, and their..." property="og:description">
+  <meta content="website" property="og:type">
+  <meta content="https://tanhiep-to.github.io/VGCap/static/images/fig1.jpg" property="og:image">
+<title>Grounding What Matters: Selective Entity Conditioning for Event-Enriched News Image Captioning</title>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+<link href="./static/css/bulma.min.css" rel="stylesheet">
+<link href="./static/css/bulma-carousel.min.css" rel="stylesheet">
+<link href="./static/css/bulma-slider.min.css" rel="stylesheet">
+<link href="./static/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet">
+<link href="./static/css/index.css" rel="stylesheet">
+<link href="./static/images/favicon.png" rel="icon" type="image/png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+<script src="./static/js/index.js"></script>
+</head>
+<body>
+<nav aria-label="main navigation" class="navbar" role="navigation">
+<div class="navbar-brand">
+<a aria-expanded="false" aria-label="menu" class="navbar-burger" role="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</a>
+</div>
+<div class="navbar-menu">
+<div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+<a aria-label="Home" class="navbar-item" href="https://tanhiep-to.github.io/VGCap/">
+<span class="icon">
+<i class="fas fa-home"></i>
+</span>
+</a>
+
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-body">
+<div class="container is-max-desktop">
+<div class="columns is-centered">
+<div class="column has-text-centered">
+<h1 class="title is-1 publication-title">Grounding What Matters: <br>Selective Entity Conditioning for Event-Enriched News Image Captioning</h1>
+<div class="is-size-5 publication-authors">
+<span class="author-block">Van-Phuc&nbsp;Phan<sup>1,2&dagger;</sup>,</span>
+<span class="author-block">Minh-Tan&nbsp;Pham<sup>1,2&dagger;</sup>,</span>
+<span class="author-block">Mai-Khiem&nbsp;Tran<sup>1,2</sup>,</span>
+<span class="author-block">Trong-Le&nbsp;Do<sup>1,2</sup>,</span>
+<span class="author-block">Hai-Dang&nbsp;Nguyen<sup>1,2</sup>,</span>
+<span class="author-block">Tam&nbsp;V.&nbsp;Nguyen<sup>3</sup>,</span>
+<span class="author-block">Minh-Triet&nbsp;Tran<sup>1,2</sup>,</span>
+<span class="author-block">Trung-Nghia&nbsp;Le<sup>1,2*</sup></span>
+</div>
+<div class="is-size-5 publication-authors">
+<span class="author-block"><sup>1</sup>University of Science, Ho Chi Minh City, Vietnam,</span>
+<span class="author-block"><sup>2</sup>Vietnam National University, Ho Chi Minh City, Vietnam,</span>
+<span class="author-block"><sup>3</sup>University of Dayton, Dayton, Ohio, United States</span>
+</div>
+
+          <div class="is-size-5 publication-authors">
+<span class="author-block"><sup>&dagger;</sup>Equal&nbsp;contribution,</span>
+<span class="author-block"><sup>*</sup>Corresponding&nbsp;author</span>
+</div>
+<div class="column has-text-centered">
+<div class="publication-links">
+<span class="link-block">
+<a aria-disabled="true" class="external-link button is-normal is-rounded is-dark" disabled title="Coming soon">
+<span class="icon">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span>Paper&nbsp;(coming&nbsp;soon)</span>
+</a>
+</span>
+<span class="link-block">
+<a aria-disabled="true" class="external-link button is-normal is-rounded is-dark" disabled title="Coming soon">
+<span class="icon">
+<i class="fab fa-github"></i>
+</span>
+<span>Code&nbsp;(coming&nbsp;soon)</span>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3">Summary</h2>
+<div class="content has-text-justified"><p>VG-Cap is a retrieval-augmented framework for event-enriched news image captioning that passes only visually grounded entities of the retrieved article to the caption generator. An Entity Heuristic Scorer selects these entities and a Two-Stage Length Control regulates the caption length. On OpenEvents-V1, VG-Cap achieves the best Overall Score of 0.6219&nbsp;and the&nbsp;highest&nbsp;CIDEr&nbsp;of&nbsp;0.265.</p></div>
+</div>
+</div>
+
+
+
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3">Method</h2>
+<div class="content has-text-justified"><p>VG-Cap generates an event-enriched caption in two stages: article retrieval, which identifies the most relevant news article for the query image, and context-grounded caption generation. Retrieval uses the retrieval component of ENRIC as a fixed backbone, with uncertainty-guided re-ranking when the initial&nbsp;result&nbsp;is&nbsp;not&nbsp;reliable.</p><p>Two-Stage Length Control combines bounded generation, with a target range of 100-120 words, and semantic normalization to a target&nbsp;length&nbsp;of&nbsp;104&nbsp;words.</p></div>
+<div class="content has-text-centered"><img alt="Pipeline diagram of VG-Cap: article retrieval and re-ranking, context construction, the Entity Heuristic Scorer, caption generation and two-stage length control." class="interpolation-image" height="962" loading="lazy" src="./static/images/fig1.jpg" width="1447"></div><h2 class="subtitle has-text-centered"><strong>Figure&nbsp;1.</strong> Overview of VG-Cap. A query image is used to retrieve a relevant news article, from which contextual information and candidate entities are extracted. The Entity Heuristic Scorer selects visually grounded entities to guide caption generation, followed by Two-Stage Length Control for the final event-enriched&nbsp;caption.</h2><div class="content has-text-justified"><p>The Entity Heuristic Scorer gives every candidate entity a groundedness score: the weighted sum of its heuristic features (contextual presence, article position and entity type), which&nbsp;cannot&nbsp;fall&nbsp;below&nbsp;zero.</p></div><div class="content has-text-centered"><img alt="Equation: S(e) is the maximum of 0 and the sum over features f of the weight of f times the activation of f for e." class="interpolation-image" height="173" loading="lazy" src="./static/images/figEq1.png" width="593"></div><h2 class="subtitle has-text-centered">Equation (1): the groundedness score S(e) of a&nbsp;candidate&nbsp;entity&nbsp;e.</h2><div class="content has-text-justified"><p>Entities with a score of at least 3.0&nbsp;are retained and ranked according to their scores, and at most ten&nbsp;entities&nbsp;are&nbsp;selected.</p></div><div class="content has-text-centered"><img alt="Equation: the selected set is the top K, with K equal to 10, of the entities whose score S(e) is at least 3.0." class="interpolation-image" height="67" loading="lazy" src="./static/images/figEq3.png" width="731"></div><h2 class="subtitle has-text-centered">Equation (3): the selected&nbsp;entity&nbsp;set.</h2></div>
+</div>
+
+
+
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3">Quantitative Results</h2>
+
+<h2 class="subtitle has-text-centered"><strong>Table&nbsp;1.</strong> Comparison with existing methods on the OpenEvents-V1 dataset. &lowast;Overall Scores computed from the official evaluation formula when not reported. Best in bold, second&nbsp;best&nbsp;underlined.</h2><div class="table-container"><table class="table is-fullwidth is-hoverable"><thead><tr><th scope="col">Method</th><th scope="col">Overall&uarr;</th><th scope="col">AP&uarr;</th><th scope="col">R@1&uarr;</th><th scope="col">R@10&uarr;</th><th scope="col">CLIP&uarr;</th><th scope="col">CIDEr&uarr;</th></tr></thead><tbody><tr><th scope="row">ENRIC&nbsp;[9]</th><td><u>0.6097</u></td><td>0.992</td><td>0.985</td><td><strong>1.000</strong></td><td>0.833</td><td><u>0.257</u></td></tr><tr><th scope="row">ReCap&nbsp;[10]</th><td>0.5987</td><td><strong>0.995</strong></td><td><strong>0.992</strong></td><td><u>0.999</u></td><td><u>0.872</u></td><td>0.243</td></tr><tr><th scope="row">Beyond&nbsp;Vision&nbsp;[11]</th><td>0.5182</td><td><u>0.994</u></td><td><u>0.990</u></td><td><strong>1.000</strong></td><td>0.748</td><td>0.195</td></tr><tr><th scope="row">ZSE-Cap&nbsp;[3]</th><td>0.4585&lowast;</td><td><u>0.994</u></td><td><u>0.990</u></td><td><u>0.999</u></td><td>0.842</td><td>0.151</td></tr><tr><th scope="row">HMR&nbsp;[8]</th><td>0.4033&lowast;</td><td>0.970</td><td>0.956</td><td>0.991</td><td><strong>0.883</strong></td><td>0.123</td></tr><tr><th scope="row">CIAN&nbsp;[14]</th><td>0.3320</td><td>0.979</td><td>0.969</td><td>0.996</td><td>0.820</td><td>0.094</td></tr><tr><th scope="row">VG-Cap&nbsp;(ours)</th><td><strong>0.6219</strong></td><td>0.992</td><td>0.985</td><td><strong>1.000</strong></td><td>0.858</td><td><strong>0.265</strong></td></tr></tbody></table></div><div class="content has-text-justified"><p>VG-Cap achieves the best Overall Score of 0.6219&nbsp;and the highest CIDEr of 0.265,&nbsp;compared with 0.6097&nbsp;and 0.257&nbsp;for ENRIC, the strongest baseline. Its retrieval metrics are identical to those of ENRIC because the retrieval pipeline is unchanged. ReCap obtains the highest AP (0.995) and R@1 (0.992), and HMR the highest CLIPScore (0.883), but their lower CIDEr limits&nbsp;their&nbsp;Overall&nbsp;Score.</p></div><h2 class="subtitle has-text-centered"><strong>Table&nbsp;2.</strong> Ablation study on the OpenEvents-V1 dataset. Retrieval and the caption backbone are fixed across all configurations. "Length" denotes mean caption length in words. Best in bold, second&nbsp;best&nbsp;underlined.</h2><div class="table-container"><table class="table is-fullwidth is-hoverable"><thead><tr><th scope="col">Configuration</th><th scope="col">Overall&uarr;</th><th scope="col">CIDEr&uarr;</th><th scope="col">CLIP&uarr;</th><th scope="col">Length</th></tr></thead><tbody><tr><th scope="row">ENRIC&nbsp;baseline&nbsp;(reproduced)</th><td>0.6097</td><td>0.257</td><td>0.833</td><td>136</td></tr><tr><th scope="row">+&nbsp;semantic&nbsp;normalizer</th><td>0.6124</td><td>0.260</td><td><u>0.835</u></td><td>104</td></tr><tr><th scope="row">+&nbsp;entities,&nbsp;prompt&nbsp;band</th><td><u>0.6166</u></td><td><u>0.263</u></td><td>0.833</td><td>104</td></tr><tr><th scope="row">+&nbsp;heuristic&nbsp;selector&nbsp;(ours)</th><td><strong>0.6219</strong></td><td><strong>0.265</strong></td><td><strong>0.858</strong></td><td>104</td></tr></tbody></table></div><div class="content has-text-justified"><p>Starting from the reproduced ENRIC baseline, the semantic normalizer raises the Overall Score from 0.6097&nbsp;to 0.6124&nbsp;while reducing the mean caption length from 136&nbsp;to 104&nbsp;words. The heuristic selector then reaches an Overall Score of 0.6219,&nbsp;a CIDEr of 0.265&nbsp;and a CLIPScore of 0.858&nbsp;at the&nbsp;same&nbsp;mean&nbsp;caption&nbsp;length.</p></div></div>
+</div>
+
+
+
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3">Qualitative Results</h2>
+<div class="content has-text-justified"><p>Captions generated with unfiltered and with groundedness-filtered entities for two examples. Without filtering, entities that are relevant to the article but weakly supported by the image are appended as contextual filler; filtering shifts the caption toward&nbsp;image-supported&nbsp;content.</p></div>
+<div class="content has-text-centered"><img alt="Two news photos, each with a caption generated with unfiltered entities and one generated with groundedness-filtered entities." class="interpolation-image" height="684" loading="lazy" src="./static/images/fig4.jpg" width="1032"></div><h2 class="subtitle has-text-centered"><strong>Figure&nbsp;4.</strong> Qualitative comparison of captions generated with unfiltered and groundedness-filtered entities. Discarded entities&nbsp;are&nbsp;highlighted.</h2></div>
+</div>
+
+
+
+
+</div>
+</section>
+
+
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2>
+<pre><code>@misc{phangrounding,
+  author = {Phan, Van-Phuc and Pham, Minh-Tan and Tran, Mai-Khiem and Do, Trong-Le and Nguyen, Hai-Dang and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  title  = {Grounding What Matters: Selective Entity Conditioning for Event-Enriched News Image Captioning},
+}</code></pre>
+</div>
+</section>
+
+
+
+
+
+<footer class="footer">
+<div class="container">
+<div class="content has-text-centered">
+
+
+</div>
+<div class="columns is-centered">
+<div class="column is-8">
+<div class="content">
+<p>
+            This website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+<p>
+            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
