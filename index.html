@@ -72,6 +72,10 @@
 </div>
 
           <div class="is-size-5 publication-authors">
+<span class="author-block">MMM2027 (Cambodia)</span>
+</div>
+
+          <div class="is-size-5 publication-authors">
 <span class="author-block"><sup>&dagger;</sup>Equal&nbsp;contribution,</span>
 <span class="author-block"><sup>*</sup>Corresponding&nbsp;author</span>
 </div>
@@ -107,8 +111,8 @@
 
 <div class="columns is-centered has-text-centered">
 <div class="column is-four-fifths">
-<h2 class="title is-3">Summary</h2>
-<div class="content has-text-justified"><p>VG-Cap is a retrieval-augmented framework for event-enriched news image captioning that passes only visually grounded entities of the retrieved article to the caption generator. An Entity Heuristic Scorer selects these entities and a Two-Stage Length Control regulates the caption length. On OpenEvents-V1, VG-Cap achieves the best Overall Score of 0.6219&nbsp;and the&nbsp;highest&nbsp;CIDEr&nbsp;of&nbsp;0.265.</p></div>
+<h2 class="title is-3">Abstract</h2>
+<div class="content has-text-justified"><p>News image captioning requires models to connect visual evidence with external article context to identify depicted people, locations, events, and their broader significance. Existing retrieval-augmented methods typically inject all named entities extracted from the retrieved article into the captioning pipeline. However, news articles often mention secondary actors and background events that are not depicted, leading to unsupported descriptions and inefficient use&nbsp;of&nbsp;the&nbsp;caption&nbsp;budget.</p><p>We introduce VG-Cap, a retrieval-augmented news captioning framework that selectively incorporates entities according to their estimated visual groundedness. Our Entity Heuristic Scorer ranks candidate entities using their presence across visual and textual context, position within the article, and semantic type. A unified gating mechanism applies the same entity selection to both prompt-time entity conditioning and post-generation enrichment, preventing rejected entities from being introduced through these&nbsp;explicit&nbsp;entity&nbsp;pathways.</p><p>We further introduce Two-Stage Length Control mechanism that combines bounded generation with entity-preserving semantic normalization. Experiments on the OpenEvents-V1 dataset set demonstrate that VG-Cap consistently outperforms the strongest baselines. The results further show that selective entity grounding improves the relevance and semantic alignment of generated news captions by reducing unnecessary&nbsp;contextual&nbsp;entities.</p></div>
 </div>
 </div>
 
@@ -173,9 +177,10 @@
 <section class="section" id="BibTeX">
 <div class="container is-max-desktop content">
 <h2 class="title">BibTeX</h2>
-<pre><code>@misc{phangrounding,
-  author = {Phan, Van-Phuc and Pham, Minh-Tan and Tran, Mai-Khiem and Do, Trong-Le and Nguyen, Hai-Dang and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
-  title  = {Grounding What Matters: Selective Entity Conditioning for Event-Enriched News Image Captioning},
+<pre><code>@article{phangrounding,
+  author  = {Phan, Van-Phuc and Pham, Minh-Tan and Tran, Mai-Khiem and Do, Trong-Le and Nguyen, Hai-Dang and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  title   = {Grounding What Matters: Selective Entity Conditioning for Event-Enriched News Image Captioning},
+  journal = {MMM2027 (Cambodia)},
 }</code></pre>
 </div>
 </section>
